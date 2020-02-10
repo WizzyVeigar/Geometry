@@ -38,7 +38,7 @@ namespace Geometry
             ///*return 2 / (A - B) */  return Math.Sqrt(10 * (10 - 10 + 8) * (10 - 9) * (10 - 9));
         }
 
-        public override double Areal()
+        public override double Area()
         {
 
             return 0.5 * FindHeight() * (A + B);

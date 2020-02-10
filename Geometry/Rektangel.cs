@@ -13,7 +13,7 @@ namespace Geometry
 
         }
 
-        public override double Areal()
+        public override double Area()
         {
             float areal = A;
             return areal * areal;

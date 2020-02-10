@@ -45,8 +45,15 @@ namespace Geometry
             this.A = a;
             this.B = b;
         }
-
-        public abstract double Areal();
+        /// <summary>
+        /// Method for calculating Area
+        /// </summary>
+        /// <returns>Retruns result of Area</returns>
+        public abstract double Area();
+        /// <summary>
+        /// Method for calculating Perimeter
+        /// </summary>
+        /// <returns>returns the result of Perimeter</returns>
         public abstract double Perimeter();
     }
 }

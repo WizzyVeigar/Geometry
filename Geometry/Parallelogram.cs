@@ -27,7 +27,7 @@ namespace Geometry
         }
 
 
-        public override double Areal()
+        public override double Area()
         {
             return Math.Sin(degrees * Math.PI / 180);
         }

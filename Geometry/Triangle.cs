@@ -12,7 +12,7 @@ namespace Geometry
 
         }
 
-        public override double Areal()
+        public override double Area()
         {
             return 0.5 * A * B;
         }

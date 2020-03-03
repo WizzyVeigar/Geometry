@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Parallelogram : Square
+    public class Parallelogram : Solid
     {
         private float degrees;
-        public Parallelogram(float a, float b, float degrees) : base(a, b)
-        {
-            this.Degrees = degrees;
-        }
 
         public float Degrees
         {
@@ -26,6 +22,11 @@ namespace Geometry
             }
         }
 
+        public Parallelogram(float a, float b, float degrees) : base(a, b)
+        {
+            this.Degrees = degrees;
+        }
+
 
         public override double Area()
         {
@@ -34,7 +35,7 @@ namespace Geometry
 
         public override double Perimeter()
         {
-            return 2 * A + 2 * B;
+            return 2 * SideA + 2 * SideB;
         }
     }
 }

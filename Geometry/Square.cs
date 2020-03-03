@@ -6,56 +6,57 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Square : Shape
+    public abstract class Square : Solid
     {
-        private float c;
-        private float d;
-        public float C
+        private float sideC;
+        private float sideD;
+
+        public float SideC
         {
             get
             {
-                return c;
+                return sideC;
             }
             set
             {
-                c = value;
+                sideC = value;
             }
         }
-        public float D
+        public float SideD
         {
             get
             {
-                return d;
+                return sideD;
             }
             set
             {
-                d = value;
+                sideD = value;
             }
         }
 
-        public Square(float a) : base(a)
+
+        public Square(float sideA) : base(sideA)
         {
         }
 
-        public Square(float a, float b) : base(a, b)
+        public Square(float sideA, float sideB) : base(sideA, sideB)
         {
-
         }
 
-        public Square(float a, float b, float c, float d) : base(a, b)
+        public Square(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB)
         {
-            this.C = c;
-            this.D = d;
+            SideC = sideC;
+            SideD = sideD;
         }
 
         public override double Area()
         {
-            return A * A;
+            return SideA * SideA;
         }
 
         public override double Perimeter()
         {
-            return A + B + C + D;
+            return SideA + SideB + SideC + SideD;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Trapez : Square
+    public class Trapez : Solid
     {
         private float parallels;
         public float Parallels
@@ -23,30 +23,30 @@ namespace Geometry
 
         public Trapez(float a, float b, float parallels) : base(a, b)
         {
-            this.Parallels = parallels;
+            Parallels = parallels;
         }
 
-        public float FindS()
+        private float FindS()
         {
-            return (A + Parallels - B + Parallels) / 2;
+            return (SideA + Parallels - SideB + Parallels) / 2;
         }
 
         public double FindHeight()
         {
             double s = FindS();
-            return 2 / (A - B) * Math.Sqrt(s * (s - A + B) * (s - parallels) * (s - Parallels));
+            return 2 / (SideA - SideB) * Math.Sqrt(s * (s - SideA + SideB) * (s - parallels) * (s - Parallels));
             ///*return 2 / (A - B) */  return Math.Sqrt(10 * (10 - 10 + 8) * (10 - 9) * (10 - 9));
         }
 
         public override double Area()
         {
 
-            return 0.5 * FindHeight() * (A + B);
+            return 0.5 * FindHeight() * (SideA + SideB);
         }
 
         public override double Perimeter()
         {
-            return A + B + 2 * Parallels;
+            return SideA + SideB + 2 * Parallels;
         }
     }
 }

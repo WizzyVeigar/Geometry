@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Geometry
 {
-    public class Triangle : Shape
+    public class Triangle : Solid
     {
         public Triangle(float a, float b) : base(a, b)
         {
@@ -14,17 +14,17 @@ namespace Geometry
 
         public override double Area()
         {
-            return 0.5 * A * B;
+            return 0.5 * SideA * SideB;
         }
 
         public double FindSideC()
         {
-            return Math.Sqrt(Math.Pow(A, 2) + Math.Pow(B, 2));
+            return Math.Sqrt(Math.Pow(SideA, 2) + Math.Pow(SideB, 2));
         }
 
         public override double Perimeter()
         {
-            return A + B + FindSideC();
+            return SideA + SideB + FindSideC();
         }
     }
 }

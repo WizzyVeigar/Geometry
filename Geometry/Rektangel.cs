@@ -8,20 +8,12 @@ namespace Geometry
 {
     public class Rektangel : Square
     {
-        public Rektangel(float a) : base(a)
+        public Rektangel(float sideA, float sideB) : base(sideA, sideB)
         {
-
         }
 
-        public override double Area()
+        public Rektangel(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB, sideC, sideD)
         {
-            float areal = A;
-            return areal * areal;
-        }
-
-        public override double Perimeter()
-        {
-            return 4 * A;
         }
     }
 }

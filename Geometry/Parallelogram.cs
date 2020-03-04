@@ -30,7 +30,8 @@ namespace Geometry
 
         public override double Area()
         {
-            return Math.Sin(degrees * Math.PI / 180);
+            return SideA * SideB * Math.Sin((Math.PI / 180) * degrees);
+            //return Math.Sin(degrees * Math.PI / 180);
         }
 
         public override double Perimeter()

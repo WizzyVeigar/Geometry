@@ -11,7 +11,7 @@ namespace Geometry
     {
         static void Main(string[] args)
         {
-            List<Solid> allShapes = new List<Solid>();
+            List<Shape> allShapes = new List<Shape>();
             //for (int i = 0; i < 20; i++)
             //{
                 allShapes.Add(new Rektangel(40,10));

@@ -16,7 +16,7 @@ namespace Geometry
         /// <summary>
         /// Method for calculating Perimeter
         /// </summary>
-        /// <returns>returns the result of Perimeter</returns>
+        /// <returns>Returns the result of Perimeter</returns>
         public abstract double Perimeter();
     }
 }

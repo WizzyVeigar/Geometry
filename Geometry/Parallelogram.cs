@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Parallelogram : Solid
+    public class Parallelogram : Quadrilateral
     {
         private float degrees;
 
@@ -24,13 +24,13 @@ namespace Geometry
 
         public Parallelogram(float a, float b, float degrees) : base(a, b)
         {
-            this.Degrees = degrees;
+            Degrees = degrees;
         }
 
 
         public override double Area()
         {
-            return SideA * SideB * Math.Sin((Math.PI / 180) * degrees);
+            return SideA * SideB * Math.Sin((Math.PI / 180) * Degrees);
             //return Math.Sin(degrees * Math.PI / 180);
         }
 

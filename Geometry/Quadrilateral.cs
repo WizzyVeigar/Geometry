@@ -6,18 +6,37 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Quadrilateral : Square
+    public abstract class Quadrilateral : Solid
     {
-        public Quadrilateral(float sideA) : base(sideA)
+        private float sideC;
+
+        protected float SideC
+        {
+            get { return sideC; }
+            set { sideC = value; }
+        }
+
+        private float sideD;
+
+        protected float SideD
+        {
+            get { return sideD; }
+            set { sideD = value; }
+        }
+
+
+        protected Quadrilateral(float sideA) : base(sideA)
         {
         }
 
-        public Quadrilateral(float sideA, float sideB) : base(sideA, sideB)
+        protected Quadrilateral(float sideA, float sideB) : base(sideA, sideB)
         {
         }
 
-        public Quadrilateral(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB, sideC, sideD)
+        protected Quadrilateral(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB)
         {
+            SideC = sideC;
+            SideD = sideD;
         }
     }
 }

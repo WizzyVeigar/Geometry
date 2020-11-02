@@ -8,8 +8,8 @@ namespace Geometry
 {
     public abstract class Solid : Shape
     {
-        protected float sideA;
-        protected float sideB;
+        private float sideA;
+        private float sideB;
 
         protected Solid(float sideA)
         {

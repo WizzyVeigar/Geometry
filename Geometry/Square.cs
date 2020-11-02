@@ -6,47 +6,13 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public abstract class Square : Solid
+    public class Square : Quadrilateral
     {
-        private float sideC;
-        private float sideD;
-
-        public float SideC
-        {
-            get
-            {
-                return sideC;
-            }
-            set
-            {
-                sideC = value;
-            }
-        }
-        public float SideD
-        {
-            get
-            {
-                return sideD;
-            }
-            set
-            {
-                sideD = value;
-            }
-        }
-
-
         public Square(float sideA) : base(sideA)
         {
-        }
-
-        public Square(float sideA, float sideB) : base(sideA, sideB)
-        {
-        }
-
-        public Square(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB)
-        {
-            SideC = sideC;
-            SideD = sideD;
+            SideB = sideA;
+            SideC = sideA;
+            SideD = sideA;
         }
 
         public override double Area()
@@ -56,7 +22,7 @@ namespace Geometry
 
         public override double Perimeter()
         {
-            return SideA + SideB + SideC + SideD;
+            return SideA * 4;
         }
     }
 }

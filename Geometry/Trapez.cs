@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Trapez : Solid
+    public class Trapez : Quadrilateral
     {
         private float parallels;
-        public float Parallels
+        protected float Parallels
         {
             get
             {
@@ -31,9 +31,9 @@ namespace Geometry
             return (SideA + Parallels - SideB + Parallels) / 2;
         }
 
-        public double FindHeight()
+        private double FindHeight()
         {
-            double s = FindS();
+            float s = FindS();
             return 2 / (SideA - SideB) * Math.Sqrt(s * (s - SideA + SideB) * (s - parallels) * (s - Parallels));
             ///*return 2 / (A - B) */  return Math.Sqrt(10 * (10 - 10 + 8) * (10 - 9) * (10 - 9));
         }

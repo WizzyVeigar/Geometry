@@ -5,11 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Geometry
 {
-    public class Triangle : Solid
+    public abstract class Triangle : Solid
     {
+        private float sideC;
+
+        protected float SideC
+        {
+            get { return sideC; }
+            set { sideC = value; }
+        }
+
+
         public Triangle(float a, float b) : base(a, b)
         {
 
+        }
+
+        protected Triangle(float a, float b, float c) : base(a, b)
+        {
+            SideC = c;
         }
 
         public override double Area()
@@ -17,14 +31,9 @@ namespace Geometry
             return 0.5 * SideA * SideB;
         }
 
-        public double FindSideC()
+        protected double FindSideC()
         {
             return Math.Sqrt(Math.Pow(SideA, 2) + Math.Pow(SideB, 2));
-        }
-
-        public override double Perimeter()
-        {
-            return SideA + SideB + FindSideC();
         }
     }
 }

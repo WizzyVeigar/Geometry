@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Geometry
 {
-    public class Rektangel : Square
+    public class Rektangel : Quadrilateral
     {
         public Rektangel(float sideA, float sideB) : base(sideA, sideB)
         {
@@ -14,6 +14,16 @@ namespace Geometry
 
         public Rektangel(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB, sideC, sideD)
         {
+        }
+
+        public override double Area()
+        {
+            return SideA * SideB;
+        }
+
+        public override double Perimeter()
+        {
+            return 2 * (SideA + SideB);
         }
     }
 }

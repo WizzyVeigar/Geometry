@@ -8,29 +8,19 @@ namespace Geometry
 {
     public class Parallelogram : Quadrilateral
     {
-        private float degrees;
-
-        public float Degrees
+        public Parallelogram(float a, float b, float thirdvalue) : base(a, b, thirdvalue)
         {
-            get
-            {
-                return degrees;
-            }
-            set
-            {
-                degrees = value;
-            }
-        }
-
-        public Parallelogram(float a, float b, float degrees) : base(a, b)
-        {
-            Degrees = degrees;
+            SideC = thirdvalue;
         }
 
 
+        /// <summary>
+        /// SideC is used as degrees, for calculating Area of a Parallelogram
+        /// </summary>
+        /// <returns></returns>
         public override double Area()
         {
-            return SideA * SideB * Math.Sin((Math.PI / 180) * Degrees);
+            return SideA * SideB * Math.Sin((Math.PI / 180) * SideC);
             //return Math.Sin(degrees * Math.PI / 180);
         }
 

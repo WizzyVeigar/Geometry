@@ -33,6 +33,11 @@ namespace Geometry
         {
         }
 
+        protected Quadrilateral(float sideA, float sideB, float thirdValue) : base(sideA, sideB)
+        {
+            SideC = thirdValue;
+        }
+
         protected Quadrilateral(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB)
         {
             SideC = sideC;

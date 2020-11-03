@@ -8,33 +8,28 @@ namespace Geometry
 {
     public class Trapez : Quadrilateral
     {
-        private float parallels;
-        protected float Parallels
+        public Trapez(float a, float b, float thirdValue) : base(a, b, thirdValue)
         {
-            get
-            {
-                return parallels;
-            }
-            set
-            {
-                parallels = value;
-            }
+            SideC = thirdValue;
+            SideD = thirdValue;
         }
-
-        public Trapez(float a, float b, float parallels) : base(a, b)
-        {
-            Parallels = parallels;
-        }
-
+        /// <summary>
+        /// Finding the length of the side, used for calculating the height
+        /// </summary>
+        /// <returns></returns>
         private float FindS()
         {
-            return (SideA + Parallels - SideB + Parallels) / 2;
+            return (SideA + SideC - SideB + SideD) / 2;
         }
 
+        /// <summary>
+        /// Finds the height of the Trapez, used for calculating Area
+        /// </summary>
+        /// <returns></returns>
         private double FindHeight()
         {
             float s = FindS();
-            return 2 / (SideA - SideB) * Math.Sqrt(s * (s - SideA + SideB) * (s - parallels) * (s - Parallels));
+            return 2 / (SideA - SideB) * Math.Sqrt(s * (s - SideA + SideB) * (s - SideC) * (s - SideD));
             ///*return 2 / (A - B) */  return Math.Sqrt(10 * (10 - 10 + 8) * (10 - 9) * (10 - 9));
         }
 
@@ -46,7 +41,7 @@ namespace Geometry
 
         public override double Perimeter()
         {
-            return SideA + SideB + 2 * Parallels;
+            return SideA + SideB + 2 * SideC;
         }
     }
 }

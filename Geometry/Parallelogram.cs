@@ -10,7 +10,7 @@ namespace Geometry
     {
         public Parallelogram(float a, float b, float thirdvalue) : base(a, b, thirdvalue)
         {
-            SideC = thirdvalue;
+
         }
 
 

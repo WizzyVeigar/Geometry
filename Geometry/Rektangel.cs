@@ -12,6 +12,7 @@ namespace Geometry
         {
         }
 
+//Det er ikke en rekangel, hvis ikke Side A og C, og B og D har samme længde
         public Rektangel(float sideA, float sideB, float sideC, float sideD) : base(sideA, sideB, sideC, sideD)
         {
         }
